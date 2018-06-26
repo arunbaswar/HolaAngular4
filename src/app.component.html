@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #2e95fb!important">
+        <div class="container">
+                <a class="navbar-brand" href="#" style="color:#ffffff; font-size:2em;">Hola-Angular4</a>
+                <div class="col-md-4 text-right">
+                        <mat-form-field>
+                                <input type="text" placeholder="Search by email address" matInput [formControl]="searchControl" [matAutocomplete]="auto">
+                        </mat-form-field>
+
+                        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                                <!-- <mat-option *ngFor="let option of filteredOptions | async" [value]="option">{{option}}</mat-option> -->
+                                <mat-option *ngFor="let option of filteredOptions  | async" [value]="option">{{option.email}}</mat-option>
+                        </mat-autocomplete>
+                </div>
+        </div>
+</nav>
+<div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+                <router-outlet></router-outlet>
+        </div>
+
+        <div class="col-md-1"></div>
+</div>

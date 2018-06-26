@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+h1{
+    color: #858585;
+}
+.home-content{
+    width: 100%;
+    margin-top: 40px;
+}

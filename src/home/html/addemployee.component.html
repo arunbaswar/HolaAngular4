@@ -1,0 +1,37 @@
+<div class="col-md-12 margin-top-30">
+
+    <div class="example-container">
+        <mat-form-field>
+            <input matInput placeholder="FirstName" [formControl]="firstName" required [(ngModel)]="addEmpModel.first_name">
+            <mat-error *ngIf="firstName.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="LastName" [formControl]="lastName" [(ngModel)]="addEmpModel.last_name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email Address" [formControl]="email" [(ngModel)]="addEmpModel.email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <div>
+            <label>Gender</label>
+            <mat-radio-group [formControl]="gender" [(ngModel)]="addEmpModel.gender">
+                <mat-radio-button value="Male" [checked]="addEmpModel.gender === 'Male'">Male</mat-radio-button>
+                <mat-radio-button value="Female" [checked]="addEmpModel.gender === 'Female'">Female</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <mat-form-field>
+            <input matInput placeholder="Designation" [formControl]="designation" [(ngModel)]="addEmpModel.designation">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Skill" [formControl]="skill" [(ngModel)]="addEmpModel.Skill">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="SSN" [formControl]="ssn" [(ngModel)]="addEmpModel.SSN">
+        </mat-form-field>
+    </div>
+    <div class="col-md-12 text-right">
+        <button type="button" class="btn btn-primary" (click)="backToHome()">Back</button>
+        <button type="button" class="btn btn-primary" (click)="saveEmployee()" >Save</button>
+    </div>
+
+</div>
